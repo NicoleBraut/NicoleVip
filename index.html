@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Nicole VIP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Nicole VIP | Oficial</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
 
 body{
 
-font-family:Poppins,sans-serif;
+font-family:'Poppins',sans-serif;
 
-background:#080808;
-
-background-image:
-radial-gradient(circle at top,#46102b 0%,#080808 60%);
+background:
+linear-gradient(
+180deg,
+#050505 0%,
+#18000d 35%,
+#090909 100%);
 
 color:white;
+
+overflow-x:hidden;
+
+min-height:100vh;
 
 display:flex;
 
@@ -29,28 +56,113 @@ justify-content:center;
 
 align-items:center;
 
-min-height:100vh;
-
 padding:25px;
+
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:900px;
+
+height:900px;
+
+background:
+
+radial-gradient(circle,
+rgba(255,80,170,.12),
+transparent 70%);
+
+top:-400px;
+
+right:-250px;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+background:
+
+radial-gradient(circle,
+rgba(255,80,170,.08),
+transparent 70%);
+
+bottom:-350px;
+
+left:-250px;
+
+pointer-events:none;
+
+z-index:-1;
 
 }
 
 .card{
 
 width:100%;
+
 max-width:430px;
 
-background:rgba(255,255,255,.06);
+background:
 
-backdrop-filter:blur(20px);
+rgba(255,255,255,.06);
 
-border-radius:28px;
+backdrop-filter:blur(18px);
+
+border:
+
+1px solid rgba(255,255,255,.08);
+
+border-radius:30px;
 
 overflow:hidden;
 
-box-shadow:0 20px 60px rgba(0,0,0,.6);
+box-shadow:
 
-border:1px solid rgba(255,255,255,.08);
+0 25px 70px rgba(0,0,0,.60);
+
+animation:
+
+fade 1s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+}
 
 }
 
@@ -58,11 +170,19 @@ border:1px solid rgba(255,255,255,.08);
 
 width:100%;
 
-height:320px;
+height:520px;
 
 object-fit:cover;
 
 display:block;
+
+transition:.7s;
+
+}
+
+.cover:hover{
+
+transform:scale(1.03);
 
 }
 
@@ -76,29 +196,45 @@ text-align:center;
 
 h1{
 
-font-size:40px;
+font-size:42px;
 
 font-weight:700;
 
-letter-spacing:2px;
+letter-spacing:3px;
+
+margin-bottom:10px;
 
 }
 
-p{
+.subtitle{
 
-margin-top:10px;
+font-size:15px;
 
-color:#ffc8dd;
+color:#ffd4e8;
+
+line-height:1.7;
 
 margin-bottom:35px;
+
+font-weight:300;
 
 }
 
 .btn{
 
-display:block;
+position:relative;
 
-padding:18px;
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:12px;
+
+width:100%;
+
+padding:20px;
 
 margin:18px 0;
 
@@ -106,15 +242,57 @@ text-decoration:none;
 
 color:white;
 
-border-radius:18px;
-
-background:linear-gradient(90deg,#ff4f9b,#ff77b7);
-
 font-size:18px;
 
 font-weight:600;
 
-transition:.25s;
+border-radius:999px;
+
+background:
+
+linear-gradient(
+90deg,
+#ff4f98,
+#ff78bc);
+
+overflow:hidden;
+
+transition:.30s;
+
+box-shadow:
+
+0 0 20px rgba(255,80,170,.15);
+
+}
+  .btn::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:70%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.45),
+transparent);
+
+transition:.7s;
+
+}
+
+.btn:hover::before{
+
+left:140%;
 
 }
 
@@ -122,17 +300,83 @@ transition:.25s;
 
 transform:translateY(-4px);
 
-box-shadow:0 0 25px rgba(255,105,180,.45);
+box-shadow:
+
+0 0 28px rgba(255,70,170,.45);
+
+}
+
+.btn span{
+
+font-size:24px;
+
+}
+
+.divisor{
+
+width:70px;
+
+height:2px;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+#ff72b7,
+transparent);
+
+margin:25px auto;
+
+opacity:.7;
 
 }
 
 .footer{
 
-margin-top:25px;
+margin-top:28px;
 
 font-size:13px;
 
-color:#999;
+color:#9f9f9f;
+
+letter-spacing:1px;
+
+}
+
+@media(max-width:480px){
+
+body{
+
+padding:18px;
+
+}
+
+.cover{
+
+height:430px;
+
+}
+
+.content{
+
+padding:28px;
+
+}
+
+h1{
+
+font-size:34px;
+
+}
+
+.btn{
+
+font-size:17px;
+
+padding:18px;
+
+}
 
 }
 
@@ -144,17 +388,48 @@ color:#999;
 
 <div class="card">
 
-<img class="cover" src="capa.jpg">
+<img
+class="cover"
+src="capa.jpg"
+alt="Nicole">
 
 <div class="content">
 
 <h1>Nicole</h1>
 
-<p>Bem-vindo ao meu espaço oficial. Escolha uma plataforma para continuar.</p>
+<p class="subtitle">
 
-<a class="btn" href="https://SEULINKPRIVACY">🔒 Privacy</a>
+Bem-vindo ao meu espaço oficial.<br>
 
-<a class="btn" href="https://SEULINKTELEGRAM">💬 Telegram</a>
+Escolha uma plataforma para continuar.
+
+</p>
+
+<div class="divisor"></div>
+
+<a
+class="btn"
+href="https://privacy.com.br/profile/NicoleBraut"
+target="_blank">
+
+<span>🔒</span>
+
+Privacy
+
+</a>
+
+<a
+class="btn"
+href="https://t.me/+QTB0GeOpBwIxN2Qx"
+target="_blank">
+
+<span>✈️</span>
+
+Telegram VIP
+
+</a>
+
+<div class="divisor"></div>
 
 <div class="footer">
 
@@ -163,8 +438,46 @@ color:#999;
 </div>
 
 </div>
-
 </div>
+
+<script>
+
+// Pequena animação de entrada dos botões
+document.querySelectorAll('.btn').forEach((botao, indice) => {
+
+    botao.style.opacity = "0";
+    botao.style.transform = "translateY(20px)";
+
+    setTimeout(() => {
+
+        botao.style.transition = "all .6s ease";
+        botao.style.opacity = "1";
+        botao.style.transform = "translateY(0)";
+
+    }, 700 + (indice * 180));
+
+});
+
+// Efeito suave na foto
+const foto = document.querySelector(".cover");
+
+document.addEventListener("mousemove", (e)=>{
+
+    const x = (window.innerWidth / 2 - e.clientX) / 120;
+    const y = (window.innerHeight / 2 - e.clientY) / 120;
+
+    foto.style.transform =
+    `scale(1.02) translate(${x}px, ${y}px)`;
+
+});
+
+document.addEventListener("mouseleave", ()=>{
+
+    foto.style.transform="scale(1)";
+
+});
+
+</script>
 
 </body>
 
